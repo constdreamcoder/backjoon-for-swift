@@ -23,8 +23,7 @@ var words = [[String]](repeating: [String](repeating: "", count: 15), count: 5)
 
 for i in 0..<5 {
     let word = readLine()!.map { String($0) }
-    let lastIndex = word.count - 1
-    words[i].replaceSubrange(0..<lastIndex, with: word)
+    words[i].replaceSubrange(0..<word.count, with: word)
 }
 
 for column in 0..<15 {

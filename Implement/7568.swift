@@ -25,8 +25,6 @@ import Foundation
  - 전체 공간 복잡도: **𝑂(𝑛)**
  */
 
-
-
 // 입력을 읽어오는 함수
 func readInput() -> [(weight: Int, height: Int)] {
     let n = Int(readLine()!)!

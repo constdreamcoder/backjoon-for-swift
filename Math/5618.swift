@@ -28,32 +28,39 @@ import Foundation
  */
 
 
-func isPrime(_ number: Int) -> Bool {
-    if number < 2 { return false }
-    for i in 2..<number {
-        if number % i == 0 {
-            return false
+import Foundation
+
+// 유클리드 알고리즘을 사용해 최대공약수(GCD)를 구하는 함수
+func gcd(_ a: Int, _ b: Int) -> Int {
+    return b == 0 ? a : gcd(b, a % b)
+}
+
+// GCD를 구하고 약수를 찾아 출력하는 함수
+func findCommonDivisors(_ numbers: [Int]) {
+    guard let first = numbers.first else { return }
+    
+    // 모든 숫자의 GCD를 구함
+    let commonGCD = numbers.reduce(first, gcd)
+    
+    // GCD의 약수를 구함
+    var divisors: [Int] = []
+    for i in 1...Int(sqrt(Double(commonGCD))) {
+        if commonGCD % i == 0 {
+            divisors.append(i)
+            if i != commonGCD / i {
+                divisors.append(commonGCD / i)
+            }
         }
     }
-    return true
+    
+    // 약수를 정렬하고 출력
+    divisors.sort()
+    divisors.forEach { print($0) }
 }
 
-let m = Int(readLine()!)!
-let n = Int(readLine()!)!
+// 입력 처리
+let n = Int(readLine()!)! // 숫자 개수
+let numbers = readLine()!.split(separator: " ").map { Int($0)! }
 
-var sum = 0
-var minimum = 10_000
-
-for number in m...n {
-    if isPrime(number) {
-        sum += number
-        minimum = min(number, minimum)
-    }
-}
-
-if sum == 0 && minimum == 10_000 {
-    print(-1)
-} else {
-    print(sum)
-    print(minimum)
-}
+// 공약수 출력
+findCommonDivisors(numbers)

@@ -25,6 +25,9 @@ import Foundation
  - numbers 배열: 입력된 숫자 배열을 저장하며, **𝑂(𝑛)** 공간을 차지합니다.
  - divisors 배열: GCD의 약수를 저장하며, 최대로 **𝑂(√GCD)** 공간을 사용합니다.
  - 전체 공간 복잡도: **𝑂(𝑛 + √GCD)**
+ 
+ 추가 설명
+ 1. 약수의 대칭성을 이용한 성능 항샹 도모를 위해 최대공약수의 제곱근까지만 공약수을 구하는 연산 수행
  */
 
 
@@ -47,6 +50,7 @@ func findCommonDivisors(_ numbers: [Int]) {
     for i in 1...Int(sqrt(Double(commonGCD))) {
         if commonGCD % i == 0 {
             divisors.append(i)
+            // 짝을 이루는 약수 추가
             if i != commonGCD / i {
                 divisors.append(commonGCD / i)
             }

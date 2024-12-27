@@ -7,3 +7,4 @@
 | 3     | 2667   | 그래프 | S1    | [바로가기](https://www.acmicpc.net/problem/2667)  | [풀이](https://github.com/constdreamcoder/backjoon-for-swift/blob/main/Graph/DFS/2667.swift)  |
 | 4     | 2583   | 그래프 | S1    | [바로가기](https://www.acmicpc.net/problem/2583)  | [풀이](https://github.com/constdreamcoder/backjoon-for-swift/blob/main/Graph/DFS/2583.swift)  |
 | 5     | 10026  | 그래프 | G5    | [바로가기](https://www.acmicpc.net/problem/10026) | [풀이](https://github.com/constdreamcoder/backjoon-for-swift/blob/main/Graph/DFS/10026.swift) |
+| 6     | 2644   | 그래프 | S2    | [바로가기](https://www.acmicpc.net/problem/2644)  | [풀이](https://github.com/constdreamcoder/backjoon-for-swift/blob/main/Graph/BFS/2644.swift)  |
